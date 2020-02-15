@@ -2,6 +2,7 @@ version: '3.3'
 services:
   botwatch: 
     image: "timdeka/botwat.ch"
+    restart: always
   db:
     image: mysql:8.0
     restart: always
