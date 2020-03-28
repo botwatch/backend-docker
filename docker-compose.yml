@@ -16,10 +16,11 @@ services:
       - 0.0.0.0:443:443
     networks:
       - prod
+      
   db:
-    image: postgres:latest
+    image: postgres:12
     container_name: db
-    restart: always
+    restart: "no"
     ports:
       - "5432"
     environment:
@@ -27,3 +28,12 @@ services:
       POSTGRES_PASSWORD: FireSnail678!
     networks: 
       - prod
+      
+  watchtower:
+    image: v2tec/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    command: watchtower botwatch --interval 30
+    restart: always
