@@ -8,6 +8,6 @@ services:
     environment:
       POSTGRES_USER: botwatch
       POSTGRES_PASSWORD: FireSnail678!
-   botwatch: 
+  botwatch: 
     image: "timdeka/botwat.ch"
     restart: always
