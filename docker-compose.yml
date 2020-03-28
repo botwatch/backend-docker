@@ -1,18 +1,29 @@
 version: '3.3'
+
+networks:
+  prod:
+    driver: bridge
+
 services: 
-  db:
-    image: postgres:11
-    container_name: db
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: botwatch
-      POSTGRES_PASSWORD: FireSnail678!
   botwatch: 
-    image: "timdeka/botwat.ch:latest"
+    image: timdeka/botwat.ch:latest
     container_name: botwatch
     restart: always
+    depends_on:
+      - db
     ports:
      - 0.0.0.0:80:80
      - 0.0.0.0:443:443
+     networks:
+       - prod
+  db:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_USER: botwatch
+      POSTGRES_PASSWORD: FireSnail678!
+    networks: 
+      - prod
