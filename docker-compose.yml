@@ -11,3 +11,5 @@ services:
   botwatch: 
     image: "timdeka/botwat.ch"
     restart: always
+     ports:
+      - "443:443"
