@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: botwatch
       POSTGRES_PASSWORD: FireSnail678!
   botwatch: 
-    image: docker.pkg.github.com/botwatch/backend/image
+    image: "timdeka/botwat.ch"
     restart: always
     ports:
      - "443:443"
