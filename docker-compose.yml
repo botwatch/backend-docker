@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: botwatch
       POSTGRES_PASSWORD: FireSnail678!
   botwatch: 
-    image: "timdeka/botwat.ch"
+    image: "timdeka/botwat.ch:latest"
     container_name: botwatch
     restart: always
     ports:
