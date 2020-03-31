@@ -6,7 +6,7 @@ networks:
 
 services: 
   botwatch: 
-    image: timdeka/botwat.ch:latest
+    image: timdeka/botwat.ch:beta
     container_name: botwatch
     restart: always
     depends_on:
