@@ -17,7 +17,7 @@ services:
     networks:
       - prod
     volumes:
-      - ./dotnet-data:/var/lib/dotnet/data
+      - ./dotnet-data:/root/.aspnet/DataProtection-Keys/
       
   db:
     image: postgres:12
